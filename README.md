@@ -2,7 +2,7 @@
 
 <p align="center">
   <img 
-    src="https://github.com/user-attachments/assets/5c6f5102-a51f-4fda-bc24-d66adc0852d6"
+    src="https://github.com/user-attachments/assets/481ea47c-f93b-4110-a50f-f7a68d9d1f57"
     alt="Cybersecurity Portfolio Preview"
     width="900"
   />
