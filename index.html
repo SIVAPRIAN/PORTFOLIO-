@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siva Prian M | Cybersecurity Portfolio</title>
+    
+    <!-- Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,700;1,400&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Animation Engines -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <style>
+        :root {
+            --neon-green: #39ff14;
+            --bg-deep: #02040a;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            cursor: crosshair;
+        }
+
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* --- THE PERFECT BACKGROUND (PROTECTED) --- */
+        #sky-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            z-index: -1;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at bottom, #0a192f 0%, #02040a 100%);
+        }
+
+        .star-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .shooting-star {
+            position: absolute;
+            left: 50%; top: 50%;
+            height: 2px;
+            background: linear-gradient(-45deg, var(--neon-green), rgba(0, 0, 0, 0));
+            filter: drop-shadow(0 0 6px var(--neon-green));
+            animation: tail 3s ease-in-out infinite, shooting 3s ease-in-out infinite;
+        }
+
+        @keyframes tail { 0% { width: 0; } 30% { width: 100px; } 100% { width: 0; } }
+        @keyframes shooting {
+            0% { transform: translateX(0) translateY(0) rotate(45deg); }
+            100% { transform: translateX(-1000px) translateY(1000px) rotate(45deg); }
+        }
+
+        /* Glass Cards */
+        .glass-card {
+            background: rgba(10, 15, 25, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(57, 255, 20, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .glass-card:hover {
+            border-color: var(--neon-green);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.15);
+            transform: translateY(-8px);
+        }
+
+        /* Hero Animation */
+        .hero-title {
+            animation: float 6s ease-in-out infinite;
+            position: relative;
+            text-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.8rem !important; }
+            section { padding: 4rem 1.5rem; }
+        }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: var(--neon-green); border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <canvas id="sky-canvas"></canvas>
+    <div class="star-container" id="shooting-star-container"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-black/40 backdrop-blur-md border-b border-white/5">
+        <div class="text-xl font-black mono tracking-tighter">
+            SIVA<span class="text-[#39ff14]">PRIAN</span><span class="text-white">_</span>
+        </div>
+        <div class="hidden md:flex gap-8 mono text-[10px] uppercase font-bold tracking-widest text-gray-400">
+            <a href="#about" class="hover:text-[#39ff14] transition">Profile</a>
+            <a href="#skills" class="hover:text-[#39ff14] transition">Arsenal</a>
+            <a href="#projects" class="hover:text-[#39ff14] transition">Inventory</a>
+            <a href="#contact" class="text-white border border-[#39ff14]/30 px-3 py-1 hover:bg-[#39ff14]/10 transition">Connect</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="h-screen flex flex-col justify-center items-center text-center px-4 relative">
+        <div class="z-10">
+            <div class="mono text-[#39ff14] text-[10px] tracking-[0.6em] mb-4 uppercase" data-aos="fade-down">
+                [ AUTH_KEY_ACCEPTED // DEFENDER_LEVEL_1 ]
+            </div>
+            
+            <h1 id="decrypt-title" class="hero-title text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter uppercase">
+                SIVA PRIAN M
+            </h1>
+            
+            <div class="h-8">
+                <span id="typed-roles" class="text-gray-400 mono text-sm md:text-xl tracking-widest uppercase"></span>
+            </div>
+            
+            <div class="mt-16 flex flex-col sm:flex-row gap-5 justify-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="#projects" class="px-12 py-4 bg-[#39ff14] text-black font-black text-[11px] uppercase tracking-widest hover:scale-105 transition shadow-[0_0_30px_rgba(57,255,20,0.4)]">
+                    PROJECT Inventory
+                </a>
+                <a href="https://github.com/SIVAPRIAN" target="_blank" class="px-12 py-4 border border-white/10 text-white font-bold text-[11px] uppercase tracking-widest hover:bg-[#39ff14]/10 transition">
+                    GitHub_Dossier
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bio Terminal -->
+    <section id="about" class="py-20 max-w-6xl mx-auto px-6">
+        <div class="glass-card rounded-2xl overflow-hidden shadow-2xl" data-aos="fade-up">
+            <div class="bg-white/5 px-6 py-3 border-b border-white/10 flex items-center justify-between">
+                <div class="flex gap-2">
+                    <div class="w-2.5 h-2.5 rounded-full bg-red-500/40"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-green-500/40"></div>
+                </div>
+                <span class="mono text-[9px] text-gray-500 uppercase tracking-widest">identity_access.log</span>
+            </div>
+            <div class="p-8 md:p-14">
+                <div id="terminal-bio" class="mono text-sm md:text-base leading-relaxed text-gray-300"></div>
+                
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 pt-10 border-t border-white/5">
+                    <div class="space-y-2">
+                        <p class="text-[10px] text-[#39ff14] mono uppercase tracking-widest">Education</p>
+                        <p class="font-bold text-lg uppercase tracking-tight">Chennai Institute of Technology</p>
+                        <p class="text-xs text-gray-500 mono tracking-widest">BE Cybersecurity | 2024 – 2028</p>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-[10px] text-[#39ff14] mono uppercase tracking-widest">Focus_Tags</p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="text-[10px] bg-[#39ff14]/10 text-[#39ff14] px-2 py-1 rounded border border-[#39ff14]/20 font-bold uppercase">Blue Team Ops</span>
+                            <span class="text-[10px] bg-[#39ff14]/10 text-[#39ff14] px-2 py-1 rounded border border-[#39ff14]/20 font-bold uppercase">Network Security</span>
+                            <span class="text-[10px] bg-[#39ff14]/10 text-[#39ff14] px-2 py-1 rounded border border-[#39ff14]/20 font-bold uppercase">CTF Player</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Arsenal (Skills) - CENTERED -->
+    <section id="skills" class="py-24 px-6 bg-black/20">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-center text-4xl md:text-6xl font-black mb-16 italic tracking-tighter underline decoration-[#39ff14]/30 underline-offset-8 uppercase">Arsenal</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Defensive -->
+                <div class="glass-card p-8" data-aos="zoom-in">
+                    <h4 class="text-[#39ff14] mono text-[11px] mb-4 uppercase font-bold tracking-widest border-b border-[#39ff14]/20 pb-2">Defensive</h4>
+                    <ul class="text-xs text-gray-400 space-y-3 mono">
+                        <li>> Incident Awareness</li>
+                        <li>> Intrusion Detection</li>
+                        <li>> Vulnerability Analysis</li>
+                        <li>> Defensive Programming</li>
+                        <li>> Linux System Hardening</li>
+                        <li>> Blue Team Ops</li>
+                    </ul>
+                </div>
+                <!-- Network -->
+                <div class="glass-card p-8" data-aos="zoom-in" data-aos-delay="100">
+                    <h4 class="text-[#39ff14] mono text-[11px] mb-4 uppercase font-bold tracking-widest border-b border-[#39ff14]/20 pb-2">Network</h4>
+                    <ul class="text-xs text-gray-400 space-y-3 mono">
+                        <li>> Network Fundamentals</li>
+                        <li>> Firewall (iptables) Logic</li>
+                        <li>> Port & Protocol Defense</li>
+                        <li>> Secure Network Design</li>
+                        <li>> Infrastructure Guarding</li>
+                    </ul>
+                </div>
+                <!-- Dev -->
+                <div class="glass-card p-8" data-aos="zoom-in" data-aos-delay="200">
+                    <h4 class="text-[#39ff14] mono text-[11px] mb-4 uppercase font-bold tracking-widest border-b border-[#39ff14]/20 pb-2">Programming</h4>
+                    <ul class="text-xs text-gray-400 space-y-3 mono">
+                        <li>> Python (Flask)</li>
+                        <li>> C / C++</li>
+                        <li>> JavaScript (React)</li>
+                        <li>> Node.js / Express</li>
+                        <li>> Secure Logic Design</li>
+                    </ul>
+                </div>
+                <!-- Cloud -->
+                <div class="glass-card p-8" data-aos="zoom-in" data-aos-delay="300">
+                    <h4 class="text-[#39ff14] mono text-[11px] mb-4 uppercase font-bold tracking-widest border-b border-[#39ff14]/20 pb-2">Cloud & DB</h4>
+                    <ul class="text-xs text-gray-400 space-y-3 mono">
+                        <li>> AWS IAM Security</li>
+                        <li>> Docker / K8s Basics</li>
+                        <li>> MySQL / NoSQL (MongoDB)</li>
+                        <li>> Shared Responsibility</li>
+                        <li>> Cloud-Native Sec</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skill Inventory (Projects) - CENTERED -->
+    <section id="projects" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-center text-4xl md:text-6xl font-black mb-16 italic tracking-tighter underline decoration-[#39ff14]/30 underline-offset-8 uppercase">PROJECT</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-card p-10 group" data-aos="fade-up">
+                    <div class="flex justify-between items-start mb-8">
+                        <i class="fas fa-network-wired text-[#39ff14] text-4xl"></i>
+                        <a href="https://github.com/SIVAPRIAN/Python-Based-Intelligent-Personal-Firewall-" target="_blank" class="text-gray-500 hover:text-[#39ff14] transition"><i class="fab fa-github text-xl"></i></a>
+                    </div>
+                    <div class="flex-grow">
+                        <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter group-hover:text-[#39ff14] transition">Intelligent Firewall</h4>
+                        <p class="text-sm text-gray-500 mono mb-8 leading-relaxed">Linux-based personal firewall built using Python and iptables for traffic control and basic IDS monitoring.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-[10px] mono mt-auto">
+                        <span class="bg-[#39ff14]/10 text-[#39ff14] px-2 py-1 rounded">IPTABLES</span>
+                        <span class="bg-[#39ff14]/10 text-[#39ff14] px-2 py-1 rounded">PYTHON</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-card p-10 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-between items-start mb-8">
+                        <i class="fas fa-microscope text-red-500 text-4xl"></i>
+                        <a href="https://github.com/SIVAPRIAN/VULNERABILITY_ASSERT" target="_blank" class="text-gray-500 hover:text-[#39ff14] transition"><i class="fab fa-github text-xl"></i></a>
+                    </div>
+                    <div class="flex-grow">
+                        <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter group-hover:text-[#39ff14] transition">Vulnerability Assert</h4>
+                        <p class="text-sm text-gray-500 mono mb-8 leading-relaxed">Analytical tool designed to evaluate system configurations and assert defensive postures against threats.</p>
+                    </div>
+                    <div class="text-[10px] mono text-[#39ff14] font-bold mt-auto uppercase tracking-widest">Analysis_Module</div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-card p-10 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-between items-start mb-8">
+                        <i class="fas fa-vault text-[#39ff14] text-4xl"></i>
+                        <a href="https://github.com/SIVAPRIAN/SECURE_SYSTEM_LOCKER" target="_blank" class="text-gray-500 hover:text-[#39ff14] transition"><i class="fab fa-github text-xl"></i></a>
+                    </div>
+                    <div class="flex-grow">
+                        <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter group-hover:text-[#39ff14] transition">Secure System Locker</h4>
+                        <p class="text-sm text-gray-500 mono mb-8 leading-relaxed">Protecting sensitive resources from unauthorized access via secure system-level programming and access control.</p>
+                    </div>
+                    <div class="text-[10px] mono text-[#39ff14] font-bold mt-auto uppercase tracking-widest">Defensive_Logic</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verified Credentials -->
+    <section class="py-24 px-6 bg-black/40">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-2xl font-black mb-12 italic text-center text-[#39ff14] tracking-widest uppercase">Verified_Credentials</h3>
+            <div class="space-y-6">
+                <div class="glass-card p-8 flex flex-col md:flex-row justify-between items-center gap-6" data-aos="fade-left">
+                    <div class="flex-grow text-center md:text-left">
+                        <h4 class="font-bold text-[#39ff14] text-xl uppercase tracking-tighter">IBM Full Stack Software Developer</h4>
+                        <p class="text-[10px] text-gray-500 mono mt-1 tracking-widest uppercase">ISSUED: JUNE 13, 2025</p>
+                    </div>
+                    <div class="text-[10px] mono border border-[#39ff14]/40 px-3 py-1 text-[#39ff14] font-bold">15 COURSES</div>
+                </div>
+                <div class="glass-card p-8 flex flex-col md:flex-row justify-between items-center gap-6" data-aos="fade-left" data-aos-delay="100">
+                    <div class="flex-grow text-center md:text-left">
+                        <h4 class="font-bold text-orange-400 text-xl uppercase tracking-tighter">AWS Cloud Practitioner Essentials</h4>
+                        <p class="text-[10px] text-gray-500 mono mt-1 tracking-widest uppercase">ISSUED: JUNE 23, 2025</p>
+                    </div>
+                    <i class="fab fa-aws text-4xl text-orange-400 opacity-60"></i>
+                </div>
+                <div class="glass-card p-8 flex flex-col md:flex-row justify-between items-center gap-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="flex-grow text-center md:text-left">
+                        <h4 class="font-bold text-green-500 text-xl uppercase tracking-tighter">Cisco Network Security Specialist</h4>
+                        <p class="text-[10px] text-gray-500 mono mt-1 tracking-widest uppercase">CISCO ACADEMY</p>
+                    </div>
+                    <i class="fas fa-network-wired text-4xl text-green-500 opacity-60"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-32 px-6 border-t border-white/5 text-center relative overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-4xl md:text-6xl font-black mb-16 tracking-tighter text-white uppercase italic opacity-90">Establish_Connection</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24 text-sm mono">
+                <a href="mailto:sivaprian14@gmail.com" class="glass-card p-10 hover:text-[#39ff14] transition">
+                    <i class="fas fa-envelope block mb-4 text-3xl"></i>
+                    sivaprian14@gmail.com
+                </a>
+                <a href="https://linkedin.com/in/sivaprian14" target="_blank" class="glass-card p-10 hover:text-[#39ff14] transition">
+                    <i class="fab fa-linkedin block mb-4 text-3xl"></i>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/SIVAPRIAN" target="_blank" class="glass-card p-10 hover:text-[#39ff14] transition">
+                    <i class="fab fa-github block mb-4 text-3xl"></i>
+                    GitHub
+                </a>
+            </div>
+
+            <p class="text-[9px] mono text-gray-800 tracking-[1.5em] uppercase italic">Siva Prian M // Professional Dossier // 2026</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Decrypt Animation
+        const title = document.getElementById('decrypt-title');
+        const finalTitle = "SIVA PRIAN M";
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&*+=-_0123456789";
+        let iteration = 0;
+        
+        const decrypt = setInterval(() => {
+            title.innerText = finalTitle.split("").map((letter, index) => {
+                if(index < iteration) return finalTitle[index];
+                return chars[Math.floor(Math.random() * chars.length)];
+            }).join("");
+            if(iteration >= finalTitle.length) clearInterval(decrypt);
+            iteration += 1 / 3;
+        }, 40);
+
+        // Subtitle Roles
+        new Typed('#typed-roles', {
+            strings: ['Blue Team Analyst', 'pentesting', 'Network Security Specialist', 'Active CTF Player'],
+            typeSpeed: 60, backSpeed: 40, loop: true
+        });
+
+        // Bio Terminal (Updated Text)
+        new Typed('#terminal-bio', {
+            strings: [
+                'root@prian:~$ cat identity_log.txt<br><br>' +
+                'I am Siva Prian M, a cybersecurity-focused student with a strong interest in Network Security, CTF and solving vulnerabilities. <br><br>' +
+                'I have hands-on experience in network security, secure software development, and Linux-based defensive systems, actively working on practical security projects such as firewalls, intrusion detection, vulnerability analysis, and cryptography challenges.<br><br>' +
+                'I have completed professional certifications from IBM, AWS, and Cisco, allowing me to bridge both development and security to design systems that are secure by design.<br><br>' +
+                '<span class="text-[#39ff14]">Goal: Blue Team Specialist | Network Security Engineer | CTF Player_</span>'
+            ],
+            typeSpeed: 8, showCursor: true, cursorChar: '█'
+        });
+
+        // Shooting Star Logic
+        function createShootingStar() {
+            const container = document.getElementById('shooting-star-container');
+            const star = document.createElement('div');
+            star.className = 'shooting-star';
+            const x = Math.random() * window.innerWidth + 500;
+            const y = Math.random() * window.innerHeight - 500;
+            star.style.left = `${x}px`;
+            star.style.top = `${y}px`;
+            star.style.animationDuration = `${Math.random() * 2 + 2}s`;
+            container.appendChild(star);
+            setTimeout(() => { star.remove(); }, 4000);
+        }
+        setInterval(createShootingStar, 4500);
+
+        // --- THE PERFECT 3D STARFIELD (PROTECTED) ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('sky-canvas'), antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const particleCount = 2000;
+        const positions = new Float32Array(particleCount * 3);
+        const particles = new THREE.BufferGeometry();
+        for (let i = 0; i < particleCount * 3; i++) { positions[i] = (Math.random() - 0.5) * 60; }
+        particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const material = new THREE.PointsMaterial({ color: 0x39ff14, size: 0.08, transparent: true, opacity: 0.5 });
+        const points = new THREE.Points(particles, material);
+        scene.add(points);
+        camera.position.z = 25;
+
+        let mouseX = 0, mouseY = 0;
+        window.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX - window.innerWidth / 2) / 100;
+            mouseY = (e.clientY - window.innerHeight / 2) / 100;
+        });
+
+        function animate() {
+            requestAnimationFrame(animate);
+            points.rotation.y += 0.0005;
+            points.rotation.x += 0.0002;
+            camera.position.x += (mouseX - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
