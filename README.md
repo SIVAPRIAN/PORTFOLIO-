@@ -68,7 +68,7 @@ A detailed look into my background as a cybersecurity student, focusing on my Bl
 - Certifications from **IBM** .
 - Certifications from **AWS** .
 - Certifications from **Cisco** .
-- 
+  
 ## 🔗 Connect
 - **Email**: [sivaprian14@gmail.com](mailto:sivaprian14@gmail.com)
 - **LinkedIn**: [Siva Prian M](https://www.linkedin.com/in/siva-prian-m-17b975316)
