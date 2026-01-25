@@ -4,7 +4,7 @@
 
 <p align="center">
   <img 
-     src="https://github.com/user-attachments/assets/06e82837-1f62-4bff-b650-854b6334365a"
+    src="https://github.com/user-attachments/assets/06e82837-1f62-4bff-b650-854b6334365a"
     alt="Cybersecurity Portfolio Preview"
     width="900"
   />
