@@ -1,4 +1,6 @@
-# 🔐 Cybersecurity Portfolio – Siva Prian M
+# Siva Prian M | Cybersecurity Portfolio
+
+---
 
 <p align="center">
   <img 
@@ -16,67 +18,62 @@
 
 ---
 
-## 🧠 About Me
-I am **Siva Prian M**, a cybersecurity-focused engineering student with a strong interest in **Network Security, Blue Team operations, and Capture The Flag (CTF)** challenges.
+## 🛡️ Overview
+Welcome to my personal portfolio website. This project showcases my journey as a cybersecurity student, featuring a high-tech, **cyberpunk-themed interface** designed to reflect my "Attacker-Aware, Defender-First" mindset.
 
-I have hands-on experience in network security, secure software development, and Linux-based defensive systems. I actively work on practical security projects such as **firewalls, intrusion detection, vulnerability analysis, and cryptography challenges**.
+The site is built with a focus on immersive user experience, utilizing **3D animations**, **glassmorphism**, and **interactive terminal effects** to present my skills, projects, and professional credentials.
 
-I have also completed professional certifications from **IBM, AWS, and Cisco**, allowing me to bridge both development and security to design systems that are **secure by design**.
+## 🚀 Features
+- **Immersive Background**: Interactive 3D starfield using `Three.js` and dynamic shooting star animations.
+- **Glassmorphism Design**: Modern, translucent glass cards with neon glow effects using `Vanilla-Tilt.js`.
+- **Terminal Aesthetics**: Typing effects throughout the site to simulate a hacker's terminal environment.
+- **Responsive Layout**: Fully optimized for desktop and mobile devices.
+- **Interactive Sections**:
+  - **Bio Terminal**: A command-line style introduction.
+  - **Arsenal**: Categorized display of technical skills (Offensive, Defensive, Coding, Cloud).
+  - **Project Inventory**: Showcase of security tools and applications I've built.
+  - **Verified Credentials**: Display of professional certifications.
 
----
+## 🛠️ Tech Stack
+- **Core**: HTML5, CSS3
+- **Styling**: Tailwind CSS (CDN), Custom CSS Variables
+- **3D & Animation**:
+  - [Three.js](https://threejs.org/) (Starfield background)
+  - [AOS (Animate On Scroll)](https://michalsnik.github.io/aos/) (Scroll animations)
+  - [Typed.js](https://github.com/mattboldt/typed.js/) (Typewriter effects)
+  - [Vanilla-tilt.js](https://micku7zu.github.io/vanilla-tilt.js/) (3D tilt effects)
+- **Icons**: FontAwesome 6, Google Fonts (JetBrains Mono & Inter)
 
-## 🎯 Career Goal
-**Blue Team Specialist | Network Security Engineer | CTF Player**
+## 📂 Portfolio Sections
 
----
+### 1. Identity Access (About Me)
+A detailed look into my background as a cybersecurity student, focusing on my Blue Team operations, Network Security expertise, and CTF experience.
 
-## 🛡️ Focus Areas
-- Blue Team & SOC Fundamentals  
-- Network Security & Firewall Logic  
-- Linux System Hardening  
-- Secure Coding Practices  
-- Cloud Security Basics  
-- CTF & Security Labs  
+### 2. Arsenal (Skills)
+- **Defensive**: Incident Awareness, IDS, Linux Hardening.
+- **Network**: Firewalls (iptables), Protocol Defense, Secure Design.
+- **Programming**: Python, C/C++, JavaScript, Java.
+- **Cloud & DB**: AWS IAM, Docker, MySQL/NoSQL.
 
----
+### 3. Project Inventory
+- **Intelligent Firewall**: Linux-based personal firewall using Python & iptables.
+- **Vulnerability Assert**: System configuration evaluation tool.
+- **Secure System Locker**: Resource protection and access control system.
 
-## 📁 Featured Projects
+### 4. Experience & Credentials
+- Internships at **Nuliclass** and **Codec Technologies**.
+- Certifications from **IBM**, **AWS**, and **Cisco**.
 
-### 🔹 Intelligent Personal Firewall
-- Python-based Linux firewall using **iptables**
-- Supports IP blocking, port control, and basic IDS monitoring
+## 💻 How to Run
+Since this is a static site, no build process is required.
 
-### 🔹 Vulnerability Assert
-- Security analysis tool to evaluate system configurations
-- Assesses system defensive posture against common threats
+1.  **Clone the repository** (or download the files).
+2.  Open `html.html` in any modern web browser.
+3.  Enjoy the experience!
 
-### 🔹 Secure System Locker
-- System-level security project
-- Protects sensitive system resources using access control mechanisms
-
----
-
-## 🧰 Tech Stack
-- **Frontend:** HTML, Tailwind CSS  
-- **JavaScript:** Vanilla JS, Three.js  
-- **UI/UX:** Terminal-style interface, animations (AOS, Typed.js)  
-- **Security Tools:** iptables, Linux  
-- **Hosting:** GitHub Pages  
-
----
-
-## 📜 Certifications
-- **IBM Full Stack Software Developer – Professional Certificate**  
-- **AWS Cloud Practitioner Essentials**  
-- **Cisco Network Security – Cisco Networking Academy**
-
----
-
-## 📬 Contact
-- 📧 Email: sivaprian14@gmail.com  
-- 🐙 GitHub: https://github.com/SIVAPRIAN  
-- 🔗 LinkedIn: https://linkedin.com/in/sivaprian14  
+## 🔗 Connect
+- **Email**: [sivaprian14@gmail.com](mailto:sivaprian14@gmail.com)
+- **LinkedIn**: [Siva Prian M](https://www.linkedin.com/in/siva-prian-m-17b975316)
+- **GitHub**: [SIVAPRIAN](https://github.com/SIVAPRIAN)
 
 ---
-
-⭐ If you like this portfolio, feel free to star the repository!
