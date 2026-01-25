@@ -56,21 +56,19 @@ A detailed look into my background as a cybersecurity student, focusing on my Bl
 - **Cloud & DB**: AWS IAM, Docker, MySQL/NoSQL.
 
 ### 3. Project Inventory
-- **Intelligent Firewall**: Linux-based personal firewall using Python & iptables.
-- **Vulnerability Assert**: System configuration evaluation tool.
-- **Secure System Locker**: Resource protection and access control system.
+- **Intelligent Firewall**: Linux-based personal firewall using Python & iptables .
+- **Vulnerability Assert**: System configuration evaluation tool .
+- **Secure System Locker**: Resource protection and access control system .
 
 ### 4. Experience & Credentials
-- Internships at **Nuliclass** and **Codec Technologies**.
-- Certifications from **IBM**, **AWS**, and **Cisco**.
+- Internships at **Nuliclass** .
+- Internships at **Codec Technologies** .
 
-## 💻 How to Run
-Since this is a static site, no build process is required.
-
-1.  **Clone the repository** (or download the files).
-2.  Open `html.html` in any modern web browser.
-3.  Enjoy the experience!
-
+### 5.Verified Credentials
+- Certifications from **IBM** .
+- Certifications from **AWS** .
+- Certifications from **Cisco** .
+- 
 ## 🔗 Connect
 - **Email**: [sivaprian14@gmail.com](mailto:sivaprian14@gmail.com)
 - **LinkedIn**: [Siva Prian M](https://www.linkedin.com/in/siva-prian-m-17b975316)
